@@ -1,4 +1,8 @@
-## Turn off the screen when locked
+## Table of contents
+* [Turn off screen on lock](#Turn-off-screen-on-lock)
+* [Remove unwanted apps](#Remove-unwanted-apps)
+
+## Turn off screen on lock
 powershell (admin) :
 ```
 powercfg.exe /setacvalueindex SCHEME_CURRENT SUB_VIDEO VIDEOIDLE \<time in seconds> 
@@ -9,9 +13,9 @@ powercfg.exe /setactive SCHEME_CURRENT
 _VIDEOIDLE = timeout used when the PC is unlocked_
 _VIDEOCONLOCK = timeout used when the PC is at a locked screen_
 
-## Remove and disable automatic installation of Outlook and Dev Home
-> To continue using Windows Mail
-> 
+## Remove unwanted apps
+> New Outlook (To continue using Windows Mail), Dev Home...
+
 Remove apps via powershell (admin) :
 ```
 Get-AppxProvisionedPackage -Online | where Displayname -match 'devhome|outlook' | Remove-AppxProvisionedPackage -AllUsers -Online
