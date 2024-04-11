@@ -5,8 +5,14 @@
 ## Turn off screen on lock
 powershell (admin) :
 ```
+// when on AC (plugged)
 powercfg.exe /setacvalueindex SCHEME_CURRENT SUB_VIDEO VIDEOIDLE \<time in seconds> 
 powercfg.exe /setacvalueindex SCHEME_CURRENT SUB_VIDEO VIDEOCONLOCK \<time in seconds>
+
+// when on DC (battery)
+powercfg.exe /setdcvalueindex SCHEME_CURRENT SUB_VIDEO VIDEOIDLE \<time in seconds> 
+powercfg.exe /setdcvalueindex SCHEME_CURRENT SUB_VIDEO VIDEOCONLOCK \<time in seconds>
+
 powercfg.exe /setactive SCHEME_CURRENT
 ```
 
